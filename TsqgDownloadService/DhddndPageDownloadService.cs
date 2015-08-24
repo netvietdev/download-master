@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace TsqgDownloadService
 {
-    public class DhvhhnPageDownloadService : PageFilesDownloadService
+    public class DhddndPageDownloadService : PageFilesDownloadService
     {
         protected override string GetFileName(string targetUri, string filePattern)
         {
@@ -19,7 +19,7 @@ namespace TsqgDownloadService
             return
                 RegexHelper.GetLinks(pageContent)
                     .Where(link => Regex.IsMatch(link, filePattern))
-                    .Select(x => "http://huc.edu.vn/" + x)
+                    .Select(x => "http://www.ndun.edu.vn" + x)
                     .Distinct();
         }
     }

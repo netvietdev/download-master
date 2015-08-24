@@ -6,11 +6,11 @@ using System.Text.RegularExpressions;
 
 namespace TsqgDownloadService
 {
-    public class DhvnhnCategoryDownloadService : CategoryFilesDownloadService
+    public class HvqyCategoryDownloadService : CategoryFilesDownloadService
     {
         protected override void ProcessAllPages(IEnumerable<string> pages, string filePattern, string targetFolder)
         {
-            var pageDownloadService = new DhvhhnPageDownloadService();
+            var pageDownloadService = new HvqyPageDownloadService();
 
             foreach (var pageLink in pages)
             {
@@ -30,7 +30,7 @@ namespace TsqgDownloadService
         protected override IEnumerable<string> GetArticleLinks(string pageContent, string linkPattern)
         {
             var links = RegexHelper.GetLinks(pageContent).Where(link => Regex.IsMatch(link, linkPattern)).Distinct();
-            return links.Select(link => "http://huc.edu.vn/" + link);
+            return links.Select(link => "http://hocvienquany.vn/Portal/" + link);
         }
     }
 }

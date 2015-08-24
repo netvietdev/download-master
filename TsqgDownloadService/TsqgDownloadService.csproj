@@ -44,6 +44,8 @@
     <Compile Include="DhcnhcmDownloadService.cs" />
     <Compile Include="DhddndCategoryDownloadService.cs" />
     <Compile Include="DhddndPageDownloadService.cs" />
+    <Compile Include="DhdlCategoryDownloadService.cs" />
+    <Compile Include="DhdlPageDownloadService.cs" />
     <Compile Include="DhkbhcmDownloadService.cs" />
     <Compile Include="DhktqdDownloadService.cs" />
     <Compile Include="DhlhcmDownloadService.cs" />
@@ -54,13 +56,19 @@
     <Compile Include="DhmdchnDownloadService.cs" />
     <Compile Include="DhtmDownloadService.cs" />
     <Compile Include="DhtnDownloadService.cs" />
+    <Compile Include="DhtnmthcmCategoryDownloadService.cs" />
+    <Compile Include="DhtnmthcmPageDownloadService.cs" />
     <Compile Include="DhtnmthnDownloadService.cs" />
     <Compile Include="DhvhhnPageDownloadService.cs" />
     <Compile Include="DhvnhnCategoryDownloadService.cs" />
     <Compile Include="DhyhpDownloadService.cs" />
     <Compile Include="HvhcqgDownloadService.cs" />
     <Compile Include="HvngDownloadService.cs" />
+    <Compile Include="HvnhCategoryDownloadService.cs" />
+    <Compile Include="HvnhPageDownloadService.cs" />
     <Compile Include="HvnnvnDownloadService.cs" />
+    <Compile Include="HvqyCategoryDownloadService.cs" />
+    <Compile Include="HvqyPageDownloadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
