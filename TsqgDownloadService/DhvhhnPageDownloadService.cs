@@ -1,12 +1,12 @@
-﻿using DownloadMaster.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DownloadMaster.Common;
 
 namespace TsqgDownloadService
 {
-    public class DhlhcmDownloadService : PageFilesDownloadService
+    public class DhvhhnPageDownloadService : PageFilesDownloadService
     {
         protected override string GetFileName(string targetUri, string filePattern)
         {
@@ -19,7 +19,7 @@ namespace TsqgDownloadService
             return
                 RegexHelper.GetLinks(pageContent)
                     .Where(link => Regex.IsMatch(link, filePattern))
-                    .Select(x => "http://www.hcmulaw.edu.vn/" + x)
+                    .Select(x => "http://huc.edu.vn/" + x)
                     .Distinct();
         }
     }

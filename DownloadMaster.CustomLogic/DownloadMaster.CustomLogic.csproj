@@ -4,18 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB3FAA24-41E0-4A2A-8E36-CB3E72E3C74C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{FFC98BC2-1969-4C7B-B7BD-9371D895E413}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DownloadMaster</RootNamespace>
-    <AssemblyName>DownloadMaster</AssemblyName>
+    <RootNamespace>DownloadMaster.CustomLogic</RootNamespace>
+    <AssemblyName>DownloadMaster.CustomLogic</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,6 +34,10 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rabbit.Foundation, Version=1.0.0.18056, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rabbit.Foundation.1.3.6\lib\Rabbit.Foundation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rabbit.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -51,7 +53,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -60,26 +61,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CategoryFilesDownloadService.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Compile Include="SerializationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DownloadMaster.Common\DownloadMaster.Common.csproj">
       <Project>{9A4C7CA4-D19F-4E1E-BD6D-261BBDF4E609}</Project>
       <Name>DownloadMaster.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DownloadMaster.CustomLogic\DownloadMaster.CustomLogic.csproj">
-      <Project>{FFC98BC2-1969-4C7B-B7BD-9371D895E413}</Project>
-      <Name>DownloadMaster.CustomLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TsqgDownloadService\TsqgDownloadService.csproj">
-      <Project>{b4cac270-32cc-48fc-b405-de37fd56ea99}</Project>
-      <Name>TsqgDownloadService</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

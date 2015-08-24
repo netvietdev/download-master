@@ -1,14 +1,12 @@
 ﻿using DownloadMaster.Common;
+using DownloadMaster.CustomLogic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Rabbit.Net.WebCrawling;
 using Rabbit.SerializationMaster;
 using Rabbit.SerializationMaster.JsonNet;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
-using System.Net;
 
 namespace DownloadMaster
 {
@@ -62,20 +60,7 @@ namespace DownloadMaster
         private static IList<DownloadServiceOption> GetConfiguredServices()
         {
             var cfgFile = ConfigurationManager.AppSettings["ConfigFile"];
-            if (cfgFile.Contains("://"))
-            {
-                var result = new WebRequestWorker().DownloadResponse(new CrawlingOption(cfgFile));
-                if (result.StatusCode == HttpStatusCode.OK)
-                {
-                    return result.ReadAsText().Deserialize<List<DownloadServiceOption>>();
-                }
-            }
-            else
-            {
-                return File.ReadAllText(cfgFile).Deserialize<List<DownloadServiceOption>>();
-            }
-
-            return new List<DownloadServiceOption>();
+            return SerializationHelper.DeserializeFrom<List<DownloadServiceOption>>(cfgFile);
         }
     }
 }

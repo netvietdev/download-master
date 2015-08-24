@@ -42,7 +42,10 @@
     <Compile Include="DhcdDownloadService.cs" />
     <Compile Include="DhcngtvtDownloadService.cs" />
     <Compile Include="DhcnhcmDownloadService.cs" />
+    <Compile Include="DhddndCategoryDownloadService.cs" />
+    <Compile Include="DhddndPageDownloadService.cs" />
     <Compile Include="DhkbhcmDownloadService.cs" />
+    <Compile Include="DhktqdDownloadService.cs" />
     <Compile Include="DhlhcmDownloadService.cs" />
     <Compile Include="DhlhnDownloadService.cs" />
     <Compile Include="DhlnDownloadService.cs" />
@@ -52,6 +55,8 @@
     <Compile Include="DhtmDownloadService.cs" />
     <Compile Include="DhtnDownloadService.cs" />
     <Compile Include="DhtnmthnDownloadService.cs" />
+    <Compile Include="DhvhhnPageDownloadService.cs" />
+    <Compile Include="DhvnhnCategoryDownloadService.cs" />
     <Compile Include="DhyhpDownloadService.cs" />
     <Compile Include="HvhcqgDownloadService.cs" />
     <Compile Include="HvngDownloadService.cs" />
@@ -62,6 +67,10 @@
     <ProjectReference Include="..\DownloadMaster.Common\DownloadMaster.Common.csproj">
       <Project>{9a4c7ca4-d19f-4e1e-bd6d-261bbdf4e609}</Project>
       <Name>DownloadMaster.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DownloadMaster.CustomLogic\DownloadMaster.CustomLogic.csproj">
+      <Project>{FFC98BC2-1969-4C7B-B7BD-9371D895E413}</Project>
+      <Name>DownloadMaster.CustomLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
