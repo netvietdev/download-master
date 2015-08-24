@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DownloadMaster.Common/bin/Debug
+/DownloadMaster/obj/Debug
+/DownloadMaster/bin/Debug
+/DownloadMaster.Common/obj/Debug
+/Download.sln.DotSettings.user
+/Download.suo
+/Download.v11.suo
+/TsqgDownloadService/obj/Debug
+/TsqgDownloadService/bin/Debug
+/ServicesTest/obj/Debug
+/ServicesTest/bin/Debug

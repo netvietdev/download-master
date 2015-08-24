@@ -43,10 +43,12 @@
     <Compile Include="DhcngtvtDownloadService.cs" />
     <Compile Include="DhcnhcmDownloadService.cs" />
     <Compile Include="DhkbhcmDownloadService.cs" />
+    <Compile Include="DhlhcmDownloadService.cs" />
     <Compile Include="DhlhnDownloadService.cs" />
     <Compile Include="DhlnDownloadService.cs" />
     <Compile Include="DhdhnDownloadService.cs" />
     <Compile Include="DhhhvnDownloadService.cs" />
+    <Compile Include="DhmdchnDownloadService.cs" />
     <Compile Include="DhtmDownloadService.cs" />
     <Compile Include="DhtnDownloadService.cs" />
     <Compile Include="DhtnmthnDownloadService.cs" />
