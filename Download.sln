@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesTest", "ServicesTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadMaster.CustomLogic", "DownloadMaster.CustomLogic\DownloadMaster.CustomLogic.csproj", "{FFC98BC2-1969-4C7B-B7BD-9371D895E413}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadMaster.GoogleDrive", "DownloadMaster.GoogleDrive\DownloadMaster.GoogleDrive.csproj", "{0C908081-9656-4E19-A057-D5212F4DC943}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{FFC98BC2-1969-4C7B-B7BD-9371D895E413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFC98BC2-1969-4C7B-B7BD-9371D895E413}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC98BC2-1969-4C7B-B7BD-9371D895E413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C908081-9656-4E19-A057-D5212F4DC943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C908081-9656-4E19-A057-D5212F4DC943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C908081-9656-4E19-A057-D5212F4DC943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C908081-9656-4E19-A057-D5212F4DC943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

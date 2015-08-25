@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HvtcCategoryDownloadService.cs" />
     <Compile Include="DhcdDownloadService.cs" />
     <Compile Include="DhcngtvtDownloadService.cs" />
     <Compile Include="DhcnhcmDownloadService.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="HvnnvnDownloadService.cs" />
     <Compile Include="HvqyCategoryDownloadService.cs" />
     <Compile Include="HvqyPageDownloadService.cs" />
+    <Compile Include="HvtcPageDownloadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

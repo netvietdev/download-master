@@ -9,9 +9,20 @@ namespace DownloadMaster.Common
 {
     public abstract class PageFilesDownloadService : IDownloadService
     {
+        private readonly IWebRequestWorker _worker;
+
+        protected PageFilesDownloadService()
+            : this(new WebRequestWorker())
+        {
+        }
+
+        protected PageFilesDownloadService(IWebRequestWorker worker)
+        {
+            _worker = worker;
+        }
+
         public void Download(DownloadServiceOption options)
         {
-            var worker = new WebRequestWorker();
             var fileLinks = new Dictionary<string, IEnumerable<string>>();
 
             foreach (var urlAndPattern in options.UrlsAndPatterns)
@@ -21,7 +32,7 @@ namespace DownloadMaster.Common
 
                 Console.WriteLine("Start getting " + uri);
 
-                var articleResult = worker.DownloadResponse(new CrawlingOption(uri));
+                var articleResult = _worker.DownloadResponse(new CrawlingOption(uri));
 
                 if (articleResult.StatusCode == HttpStatusCode.OK)
                 {
@@ -43,12 +54,12 @@ namespace DownloadMaster.Common
                     count += 1;
                     Console.WriteLine("Process " + count + "/" + total);
 
-                    ProcessDownload(options, file, kvp, worker);
+                    ProcessDownload(options, file, kvp);
                 }
             }
         }
 
-        private void ProcessDownload(DownloadServiceOption options, string file, KeyValuePair<string, IEnumerable<string>> kvp, WebRequestWorker worker)
+        private void ProcessDownload(DownloadServiceOption options, string file, KeyValuePair<string, IEnumerable<string>> kvp)
         {
             try
             {
@@ -62,7 +73,7 @@ namespace DownloadMaster.Common
                     return;
                 }
 
-                var fileResult = worker.DownloadResponse(new CrawlingOption(file));
+                var fileResult = _worker.DownloadResponse(new CrawlingOption(file));
                 if (string.IsNullOrWhiteSpace(fileName) && !string.IsNullOrWhiteSpace(fileResult.ResponseUri))
                 {
                     fileName = Path.GetFileName(fileResult.ResponseUri);
