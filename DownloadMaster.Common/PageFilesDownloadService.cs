@@ -86,6 +86,11 @@ namespace DownloadMaster.Common
                     return;
                 }
 
+                if (!Directory.Exists(options.TargetFolder))
+                {
+                    Directory.CreateDirectory(options.TargetFolder);
+                }
+
                 File.WriteAllBytes(filePath, fileResult.Content);
                 Console.WriteLine(fileName + " -> Done");
             }

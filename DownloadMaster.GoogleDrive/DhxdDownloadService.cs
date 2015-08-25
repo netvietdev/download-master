@@ -1,3 +1,4 @@
+using System;
 using DownloadMaster.Common;
 using Google.Apis.Services;
 using System.Collections.Generic;
@@ -20,8 +21,8 @@ namespace DownloadMaster.GoogleDrive
 
         protected override string GetFileName(string targetUri, string filePattern)
         {
-            // Get file name by using response header
-            return string.Empty;
+            var match = Regex.Matches(targetUri, filePattern, RegexOptions.Singleline).Cast<Match>().First();
+            return Uri.UnescapeDataString(match.Groups[1].Value);
         }
 
         protected override IEnumerable<string> GetFileLinks(string pageContent, string filePattern)

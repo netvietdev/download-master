@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DhcnhnDownloadService.cs" />
+    <Compile Include="DhgtvtDownloadService.cs" />
+    <Compile Include="DhyhnDownloadService.cs" />
     <Compile Include="HvtcCategoryDownloadService.cs" />
     <Compile Include="DhcdDownloadService.cs" />
     <Compile Include="DhcngtvtDownloadService.cs" />
