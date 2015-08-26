@@ -13,7 +13,7 @@ namespace ServicesTest
         {
             var service =
                 new DhxdDownloadService("798851632091-eqf7bgvqf797q5lnm7g47t0rq08prks9@developer.gserviceaccount.com",
-                    @"E:\Projects\bitbucket\ts2015\Docs\GoogleServiceAccount\tuyensinhquocgia-f36c1d0e7788.p12", "TSQG");
+                    @"D:\Wip\Practices\ts2015\Docs\GoogleServiceAccount\tuyensinhquocgia-f36c1d0e7788.p12", "TSQG");
 
             var options = new DownloadServiceOption()
             {
